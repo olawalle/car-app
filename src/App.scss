@@ -1,0 +1,44 @@
+@import "~antd/dist/antd.css";
+
+@font-face {
+  font-family: helvetica;
+  src: url("./assets/fonts/helvetica-light-587ebe5a59211.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  font-family: helvetica;
+}
+
+button {
+  cursor: pointer;
+  font-size: 14px;
+  &:focus {
+    outline: none;
+  }
+}
+.green-ghost-btn {
+  border: 0.3px solid #fff;
+  border-radius: 40px;
+  height: 45px;
+  padding: 0 20px;
+  color: #fff;
+  background-color: transparent;
+  &:hover {
+    background-color: #24c599;
+    border: 0.3px solid #24c599;
+  }
+}
+.green-btn {
+  border: 0.3px solid #24c599;
+  border-radius: 12px;
+  height: 45px;
+  padding: 0 20px;
+  color: #fff;
+  background-color: #24c599;
+  &:hover {
+    background-color: #24c599;
+    border: 0.3px solid #24c599;
+    color: #fff;
+  }
+}

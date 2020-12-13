@@ -1,0 +1,1602 @@
+{
+	"info": {
+		"_postman_id": "f7585b81-6265-4fbd-af61-0539e39b82d3",
+		"name": "DartPay API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth Services",
+			"item": [
+				{
+					"name": "UserLogin_Invalid_Credentials",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "20bf8106-4205-4063-8106-8e0b0e252c13",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"youremail@dartpay.cash\",\n    \"password\": \"yourpassword\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserLogin_Invalid_Password",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ba915313-8594-460e-abc6-c7cc567720cc",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sspe@givmail.com\",\n    \"password\": \"yourpassword\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserLogin_Valid_Credentials (Sign In)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "66df4b08-a669-4a1c-b3f0-d8d362e6a254",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"",
+									"//***** NOTE: THIS ENDPOINT WILL RETURN A TOKEN. WHEN DECODED, TOKEN CONTAINS THE FOLLOWING *****/",
+									"// {",
+									"//     email: user.email,",
+									"//     firstname: merchant.contactfirstname,",
+									"//     businessname: merchant.businessname,",
+									"//     businessid: merchant._id",
+									"// }"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"johnny.cash1990@givmail.com\",\n    \"password\": \"b8d3cd0b\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/user/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Merchant Services",
+			"item": [
+				{
+					"name": "MerchantWhoAmI",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6f819fdc-2c8c-4b30-a924-ae7bc3c74a7e",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNzcGVAZ2l2bWFpbC5jb20iLCJmaXJzdG5hbWUiOiJKYWNrbHluIiwiYnVzaW5lc3NuYW1lIjoiSGFwcHkgVG91cnMgJiBUcmF2ZWxzIiwiYnVzaW5lc3NpZCI6IjVlZDgzMDIxZTU3ZThjMDAxN2RlMDIzZCIsInB1YmxpY2tleSI6IjEyYjY5N2FmLTU5ODItNDU3Mi04ZmE1LWVhYmNiZDQwMGVjNSIsInVzZXIiOiI1ZWQ4MzAyMGU1N2U4YzAwMTdkZTAyM2MiLCJpYXQiOjE2MDc0NjgxMTIsImV4cCI6MTYwNzU1NDUxMn0.RrK1o48_BEnKWsoAWuVhkwRs36qmOWNGRB7SJhYzEfU';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/whoami",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"whoami"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MerchantAdd_New_Merchant (Sign Up)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6880509f-0ffb-4651-9415-8de34a076b2c",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"__newemail@givmail.com\",\n    \"businessname\": \"Manna Electronics Ltd\",\n    \"businessphone\": \"08445608951\",\n    \"industry\": \"Computers & Electronics\",\n    \"address\": \"A valid physical address, in the world.\",\n    \"contactfirstname\": \"Maduka\",\n    \"contactlastname\": \"Adewunmi\",\n    \"referralcode\": \"6234H\",\n    \"user\": \"5fbba17062a66a39e8284fd6\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/retail/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"retail",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MerchantEdit_Merchant",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9f509a71-0a5e-4053-8fcd-0dd8a02a965c",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Il9fZXZlcnlkYXlwZXJzb25AZ2l2bWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYWR1a2EiLCJidXNpbmVzc25hbWUiOiJNYW5uYSBFbGVjdHJvbmljcyBMdGQiLCJidXNpbmVzc2lkIjoiNWZiYmYyNDMwMDg2NzQ1ZDA3MTA0OWFiIiwicHVibGlja2V5IjoiNTY3N2EzY2MtMDc4MS00YWY5LWIxODYtNDg0NjE3MjI1MDc5IiwidXNlciI6IjVmYmJhMTcwNjJhNjZhMzllODI4NGZkNiIsImlhdCI6MTYwNzc3OTU3NiwiZXhwIjoxNjA3ODY1OTc2fQ.vo4TybjT9jTrudVKrYWlRH3pYVpJigLYD-_pxpXi7Is';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"businessphone\": \"09445608952\",\n    \"industry\": \"Computer Hardware\",\n    \"contactfirstname\": \"Aderemi\",\n    \"contactlastname\": \"Chikwendu\",\n    \"address\": \"A valid physical address, in the world.\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/5fbbf2430086745d071049ab/edit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"5fbbf2430086745d071049ab",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MerchantGet_Merchant",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "41a831e3-5116-4bb9-a588-597814799388",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Il9fZXZlcnlkYXlwZXJzb25AZ2l2bWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYWR1a2EiLCJidXNpbmVzc25hbWUiOiJNYW5uYSBFbGVjdHJvbmljcyBMdGQiLCJidXNpbmVzc2lkIjoiNWZiYmYyNDMwMDg2NzQ1ZDA3MTA0OWFiIiwiaWF0IjoxNjA2MjQxNDI0LCJleHAiOjE2MDYzMjc4MjR9.YN6jlPJpPfPAhhpkza_ozHOY8v7gme-vdhlN73_BNjo';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/5fbbf2430086745d071049ab/show",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"5fbbf2430086745d071049ab",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MerchantGet_Merchant_Transactions",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "97e215b4-4595-45ed-92c6-a343227044f9",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNzcGVAZ2l2bWFpbC5jb20iLCJmaXJzdG5hbWUiOiJKYWNrbHluIiwiYnVzaW5lc3NuYW1lIjoiSGFwcHkgVG91cnMgJiBUcmF2ZWxzIiwiYnVzaW5lc3NpZCI6IjVlZDgzMDIxZTU3ZThjMDAxN2RlMDIzZCIsImlhdCI6MTYwNjIzOTU0NSwiZXhwIjoxNjA2MzI1OTQ1fQ.dUODXuekw8S5uDTjNTassz7PCjmLhg7uORN8gORcv8g';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/5ed83021e57e8c0017de023d/transactions/show",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"5ed83021e57e8c0017de023d",
+								"transactions",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MerchantGet_Merchant_Customers",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81db0a8d-a2a8-4b7f-9566-5a26e2b4e3c0",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNzcGVAZ2l2bWFpbC5jb20iLCJmaXJzdG5hbWUiOiJKYWNrbHluIiwiYnVzaW5lc3NuYW1lIjoiSGFwcHkgVG91cnMgJiBUcmF2ZWxzIiwiYnVzaW5lc3NpZCI6IjVlZDgzMDIxZTU3ZThjMDAxN2RlMDIzZCIsImlhdCI6MTYwNjIzOTU0NSwiZXhwIjoxNjA2MzI1OTQ1fQ.dUODXuekw8S5uDTjNTassz7PCjmLhg7uORN8gORcv8g';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/5ed83021e57e8c0017de023d/customers/show",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"5ed83021e57e8c0017de023d",
+								"customers",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MerchantGet_Merchant_Cashpoints",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ef3dc03b-c99f-4e5b-96a3-bb3c11479096",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imxpb2NhX3NwYUBnaXZtYWlsLmNvbSIsImZpcnN0bmFtZSI6Ikxpb2NhIiwiYnVzaW5lc3NuYW1lIjoiTGlvY2EgU3BhIEx0ZCIsImJ1c2luZXNzaWQiOiI1ZjU5Mjg1NzA4MTM1OTM1MGFmZDVjNDQiLCJwdWJsaWNrZXkiOiIyYWJmZjJjNS0yYjlmLTQ0OWItYjNiMC05MmMyYWQzYjljMmQiLCJpYXQiOjE2MDY5MzY4ODcsImV4cCI6MTYwNzAyMzI4N30.MvXuGDA0xNYL4IbIKxvKt4Nj8flczxcGMCk5Z2ltCgc';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"//visit the login end point and replace email with lioca_spa@givmail.com to receive useable token to replace the token above with",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/5f592857081359350afd5c44/cashpoints/show",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"5f592857081359350afd5c44",
+								"cashpoints",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MerchantAdd_New_Cashpoint",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a029c878-8229-495a-9ae8-6695ad98c51a",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNzcGVAZ2l2bWFpbC5jb20iLCJmaXJzdG5hbWUiOiJKYWNrbHluIiwiYnVzaW5lc3NuYW1lIjoiSGFwcHkgVG91cnMgJiBUcmF2ZWxzIiwiYnVzaW5lc3NpZCI6IjVlZDgzMDIxZTU3ZThjMDAxN2RlMDIzZCIsImlhdCI6MTYwNjU5Mjc3MiwiZXhwIjoxNjA2Njc5MTcyfQ.Zl2EuhEoKhB8jNWLzBcugz_XZGg_QsXOi0JdLpExugg';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"temi.asuquo95@givmail.com\",\n    \"phone\" : \"09987006130\",\n    \"contactfirstname\" : \"Temilade\",\n    \"contactlastname\" : \"Asuquo\",\n    \"merchant\" : \"5f592857081359350afd5c44\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/cashpoint/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"cashpoint",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MerchantGet_PrivateKey",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ef3dc03b-c99f-4e5b-96a3-bb3c11479096",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imxpb2NhX3NwYUBnaXZtYWlsLmNvbSIsImZpcnN0bmFtZSI6Ikxpb2NhIiwiYnVzaW5lc3NuYW1lIjoiTGlvY2EgU3BhIEx0ZCIsImJ1c2luZXNzaWQiOiI1ZjU5Mjg1NzA4MTM1OTM1MGFmZDVjNDQiLCJpYXQiOjE2MDY1ODQ5NTksImV4cCI6MTYwNjY3MTM1OX0.SHWnk6KOySWn6JnKAVNkBCa32fX7dkNzffP0SKQpIQs';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/5f592857081359350afd5c44/privatekey",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"5f592857081359350afd5c44",
+								"privatekey"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MerchantGet_BankName",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ef3dc03b-c99f-4e5b-96a3-bb3c11479096",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNzcGVAZ2l2bWFpbC5jb20iLCJmaXJzdG5hbWUiOiJKYWNrbHluIiwiYnVzaW5lc3NuYW1lIjoiSGFwcHkgVG91cnMgJiBUcmF2ZWxzIiwiYnVzaW5lc3NpZCI6IjVlZDgzMDIxZTU3ZThjMDAxN2RlMDIzZCIsInB1YmxpY2tleSI6IjEyYjY5N2FmLTU5ODItNDU3Mi04ZmE1LWVhYmNiZDQwMGVjNSIsInVzZXIiOiI1ZWQ4MzAyMGU1N2U4YzAwMTdkZTAyM2MiLCJpYXQiOjE2MDc3NzkwODQsImV4cCI6MTYwNzg2NTQ4NH0.OPogWbIpNtM3qHkCoIvafh3ONdeUqbVeAOq4KKXlTic';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accountnumber\": \"723423423\",\n    \"bankcode\": \"00012\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/bank/name/show",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"bank",
+								"name",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MerchantAdd_New_Bank",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ef3dc03b-c99f-4e5b-96a3-bb3c11479096",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNzcGVAZ2l2bWFpbC5jb20iLCJmaXJzdG5hbWUiOiJKYWNrbHluIiwiYnVzaW5lc3NuYW1lIjoiSGFwcHkgVG91cnMgJiBUcmF2ZWxzIiwiYnVzaW5lc3NpZCI6IjVlZDgzMDIxZTU3ZThjMDAxN2RlMDIzZCIsInB1YmxpY2tleSI6IjEyYjY5N2FmLTU5ODItNDU3Mi04ZmE1LWVhYmNiZDQwMGVjNSIsInVzZXIiOiI1ZWQ4MzAyMGU1N2U4YzAwMTdkZTAyM2MiLCJpYXQiOjE2MDc3NzkwODQsImV4cCI6MTYwNzg2NTQ4NH0.OPogWbIpNtM3qHkCoIvafh3ONdeUqbVeAOq4KKXlTic';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accountnumber\": \"723423423\",\n    \"bankname\": \"GTB Bank\",\n    \"bankcode\": \"00012\",\n    \"merchant\": \"5ed83021e57e8c0017de023d\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/bank/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"bank",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MerchantGet_Bank_List",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ef3dc03b-c99f-4e5b-96a3-bb3c11479096",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNzcGVAZ2l2bWFpbC5jb20iLCJmaXJzdG5hbWUiOiJKYWNrbHluIiwiYnVzaW5lc3NuYW1lIjoiSGFwcHkgVG91cnMgJiBUcmF2ZWxzIiwiYnVzaW5lc3NpZCI6IjVlZDgzMDIxZTU3ZThjMDAxN2RlMDIzZCIsInB1YmxpY2tleSI6IjEyYjY5N2FmLTU5ODItNDU3Mi04ZmE1LWVhYmNiZDQwMGVjNSIsInVzZXIiOiI1ZWQ4MzAyMGU1N2U4YzAwMTdkZTAyM2MiLCJpYXQiOjE2MDc3NzkwODQsImV4cCI6MTYwNzg2NTQ4NH0.OPogWbIpNtM3qHkCoIvafh3ONdeUqbVeAOq4KKXlTic';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/merchant/bank/list/show",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"merchant",
+								"bank",
+								"list",
+								"show"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User Services",
+			"item": [
+				{
+					"name": "UserAdd_New_User (Sign Up)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c37b7550-eb7f-4266-b72a-882587aaf47a",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"__everydayperson@givmail.com\",\n    \"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/user/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"user",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_Change_Password",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a029c878-8229-495a-9ae8-6695ad98c51a",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imxpb2NhX3NwYUBnaXZtYWlsLmNvbSIsImZpcnN0bmFtZSI6Ikxpb2NhIiwiYnVzaW5lc3NuYW1lIjoiTGlvY2EgU3BhIEx0ZCIsImJ1c2luZXNzaWQiOiI1ZjU5Mjg1NzA4MTM1OTM1MGFmZDVjNDQiLCJwdWJsaWNrZXkiOiIyYWJmZjJjNS0yYjlmLTQ0OWItYjNiMC05MmMyYWQzYjljMmQiLCJpYXQiOjE2MDY5Mjg0NjUsImV4cCI6MTYwNzAxNDg2NX0.R-mtue8GNARalB5DxxxGFUyNhSd0gMe5cq0pjsIm5JA';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"password\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/user/changepassword",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"user",
+								"changepassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_Forgot_Password",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a029c878-8229-495a-9ae8-6695ad98c51a",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"temi.asuquo95@givmail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/user/forgotpassword",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"user",
+								"forgotpassword"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Cashpoint Services",
+			"item": [
+				{
+					"name": "CashpointGet_Customer_Transactions",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9dd8a359-37a4-4b9f-b479-e5a969fa9a07",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNzcGVAZ2l2bWFpbC5jb20iLCJmaXJzdG5hbWUiOiJKYWNrbHluIiwiYnVzaW5lc3NuYW1lIjoiSGFwcHkgVG91cnMgJiBUcmF2ZWxzIiwiYnVzaW5lc3NpZCI6IjVlZDgzMDIxZTU3ZThjMDAxN2RlMDIzZCIsInB1YmxpY2tleSI6IjEyYjY5N2FmLTU5ODItNDU3Mi04ZmE1LWVhYmNiZDQwMGVjNSIsImlhdCI6MTYwNjg2MjkxNCwiZXhwIjoxNjA2OTQ5MzE0fQ.2O153uhQWNoqCEANLPJ7EtR6ECO9K4cyjDbZ32VsP5c';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"//visit the login end point and replace email with lioca_spa@givmail.com to receive useable token to replace the token above with",
+									"",
+									"//pass in day, week, month, year as 'period' in request body",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"period\": \"year\"            \n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/cashpoint/5f5a0aaa89e9157f68fa05ac/customers/show",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"cashpoint",
+								"5f5a0aaa89e9157f68fa05ac",
+								"customers",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CashpointAdd_New_Retail_Order",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2035e910-72e5-426b-9e29-f2496e4a609f",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imxpb2NhX3NwYUBnaXZtYWlsLmNvbSIsImZpcnN0bmFtZSI6Ikxpb2NhIiwiYnVzaW5lc3NuYW1lIjoiTGlvY2EgU3BhIEx0ZCIsImJ1c2luZXNzaWQiOiI1ZjU5Mjg1NzA4MTM1OTM1MGFmZDVjNDQiLCJwdWJsaWNrZXkiOiIyYWJmZjJjNS0yYjlmLTQ0OWItYjNiMC05MmMyYWQzYjljMmQiLCJpYXQiOjE2MDY5Mjg0NjUsImV4cCI6MTYwNzAxNDg2NX0.R-mtue8GNARalB5DxxxGFUyNhSd0gMe5cq0pjsIm5JA';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);",
+									"",
+									"",
+									"//Visit/grab the QRCode library https://www.dartpay.cash/assets/js/jquery-qrcode-0.18.0.min.js",
+									"",
+									"/*",
+									"Quick usage to generate a QRCode into the #qrcode HTML element would be to pass the response payload into a function text field as follows:",
+									"",
+									"//FOR TRANSFER PAYMENT METHOD",
+									"let loadQR = (response_payload) => {",
+									"    console.log(\"response_payload:\", response_payload);",
+									"",
+									"    $(\"#qrcode\").empty();",
+									"    $(\"#qrcode\").qrcode({",
+									"        render: 'div',",
+									"        minVersion: 1,",
+									"        maxVersion: 40,",
+									"        ecLevel: 'H',",
+									"        size: 150,",
+									"        text: \"Order Reference: \" + response_payload.transactionref + \"\\n\" +",
+									"            \"Order Total: \" + '₦' + response_payload.amount + \"\\n\" +",
+									"            \"Account Number: \" + response_payload.accountnumber + \"\\n\" +",
+									"            \"Account Name: \" + response_payload.name + \"\\n\" +",
+									"            \"Bank: \" + response_payload.bank + \"\\n\",",
+									"        fill: \"#ff0000\"",
+									"    });",
+									"};",
+									"",
+									"//FOR WALLET PAYMENT METHOD",
+									"let loadQR = (response_payload) => {",
+									"    console.log(\"response_payload:\", response_payload);",
+									"",
+									"    $(\"#qrcode\").empty();",
+									"    $(\"#qrcode\").qrcode({",
+									"        render: 'div',",
+									"        minVersion: 1,",
+									"        maxVersion: 40,",
+									"        ecLevel: 'H',",
+									"        size: 150,",
+									"        text: \"Order Reference: \" + response_payload.transactionref + \"\\n\" +",
+									"            \"Order Total: \" + '₦' + response_payload.amount + \"\\n\" +",
+									"            \"Payment Code: \" + response_payload.paymentcode + \"\\n\" +",
+									"            \"Business Name: \" + response_payload.name + \"\\n\",",
+									"        fill: \"#ff0000\"",
+									"    });",
+									"};",
+									"*/"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "publicKey",
+								"type": "text",
+								"value": "{{publicKey}}"
+							},
+							{
+								"key": "b-access-token",
+								"type": "text",
+								"value": "{{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cashpoint\": \"5fbd49d5214243154545eb74\",\n    \"description\": \"XYZ Description\",\n    \"paymentmethod\": \"transfer\",\n    \"amount\": \"1676\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/cashpoint/retail/order/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"cashpoint",
+								"retail",
+								"order",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CashpointEdit_Cashpoint",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9f509a71-0a5e-4053-8fcd-0dd8a02a965c",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Il9fZXZlcnlkYXlwZXJzb25AZ2l2bWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYWR1a2EiLCJidXNpbmVzc25hbWUiOiJNYW5uYSBFbGVjdHJvbmljcyBMdGQiLCJidXNpbmVzc2lkIjoiNWZiYmYyNDMwMDg2NzQ1ZDA3MTA0OWFiIiwiaWF0IjoxNjA2MjQxNDI0LCJleHAiOjE2MDYzMjc4MjR9.YN6jlPJpPfPAhhpkza_ozHOY8v7gme-vdhlN73_BNjo';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\" : \"09987006130\",\n    \"contactfirstname\" : \"Temilade\",\n    \"contactlastname\" : \"Asuquo\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/cashpoint/5fbbf2430086745d071049ab/edit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"cashpoint",
+								"5fbbf2430086745d071049ab",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Messaging Services",
+			"item": [
+				{
+					"name": "MessagingSend_Support_Message",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a029c878-8229-495a-9ae8-6695ad98c51a",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'SGFuZGxpbmdMb25lQ3J1c2FkZXJzSW5BRGFuZ2Vyb3VzbHlEYW5nZXJvdXNXb3JsZCM=';",
+									"var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNzcGVAZ2l2bWFpbC5jb20iLCJmaXJzdG5hbWUiOiJKYWNrbHluIiwiYnVzaW5lc3NuYW1lIjoiSGFwcHkgVG91cnMgJiBUcmF2ZWxzIiwiYnVzaW5lc3NpZCI6IjVlZDgzMDIxZTU3ZThjMDAxN2RlMDIzZCIsImlhdCI6MTYwNjU5Mjc3MiwiZXhwIjoxNjA2Njc5MTcyfQ.Zl2EuhEoKhB8jNWLzBcugz_XZGg_QsXOi0JdLpExugg';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									"postman.setGlobalVariable('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "b-access-token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subject\" : \"A Real Message\",\n    \"message\" : \"This is what a real message from a real human looks like. Anything else is, alien!\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/messaging/support/send",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"messaging",
+								"support",
+								"send"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Simulation Services",
+			"item": [
+				{
+					"name": "BankTransferPaymentSimulation",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "103d696b-5fdc-435b-aee4-363965af4de2",
+								"exec": [
+									"var d = new Date();",
+									"var requestId = d.getTime();",
+									"var publicKey = 'I0xvbmVseUhhbmRsaW5nQ3J1c2FkZXJJbkFWZXJpbHlNYWRseURhbmdlcm91c1dvcmxk';",
+									"",
+									"var baseUrl = 'https://www.dartpay.cash';",
+									"",
+									"postman.setGlobalVariable('baseUrl', baseUrl);",
+									"postman.setGlobalVariable('requestId', requestId);",
+									"postman.setGlobalVariable('publicKey', publicKey);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "publicKey",
+								"value": "{{publicKey}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reference\": \"dartpay-20201018102240057\",\n    \"amount\": \"340\",\n    \"account_number\": \"4600000197\",\n    \"originator_acount_number\": \"2178009008\",\n    \"originator_acount_name\": \"John Burkam\",\n    \"originator_bank\": \"001004\",             \n    \"timestamp\" : \"2020-10-16T17:11:25.587Z\"\n}\n"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/service/demo/v1/query/transaction/simulatepayment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"service",
+								"demo",
+								"v1",
+								"query",
+								"transaction",
+								"simulatepayment"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
