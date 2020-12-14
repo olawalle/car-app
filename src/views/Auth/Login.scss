@@ -1,0 +1,77 @@
+.login {
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+  .half {
+    width: 50%;
+  }
+  .fields {
+    padding: 0 120px;
+    h1 {
+      font-weight: 600;
+      margin-top: 100px;
+      margin-bottom: 5px;
+    }
+    p {
+      margin-bottom: 50px;
+      color: rgba(0, 0, 0, 0.527);
+    }
+    .guAvsT {
+      height: auto;
+      border: 0;
+      margin-bottom: 30px;
+      input {
+        border: 1px solid #24c599;
+        overflow: hidden;
+        height: 50px;
+        border-radius: 50px;
+        padding-left: 20px;
+      }
+      .fgkEsL {
+        font-size: 18px;
+        margin-left: 20px;
+        background-color: #fff;
+        width: auto;
+        padding: 0 10px;
+        transform: translate3d(0, -115%, 0) scale(0.7);
+      }
+      .iIDbA {
+        margin-left: 30px;
+        margin-bottom: 15px;
+        width: auto;
+      }
+    }
+    .forgot {
+      text-align: right;
+      margin-bottom: 25px;
+      margin-top: -20px;
+      font-size: 12px;
+    }
+    .green-btn {
+      width: 100%;
+      border-radius: 40px;
+      font-size: 16px;
+      height: 50px;
+    }
+    .idont {
+      font-size: 12px;
+      margin-top: 12px;
+    }
+  }
+  .woman {
+    background-image: url("../../assets/images/woman2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    border-radius: 20px;
+  }
+  .woman_ {
+    background-image: url("../../assets/images/woman_.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    border-radius: 20px;
+  }
+}

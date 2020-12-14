@@ -1,0 +1,11 @@
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  background-color: #f8f8f8;
+  height: 100vh;
+  padding: 30px;
+  .dashbody {
+    background-color: #fff;
+    border-radius: 12px;
+  }
+}

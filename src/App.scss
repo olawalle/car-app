@@ -10,6 +10,10 @@
   font-family: helvetica;
 }
 
+.green--text {
+  color: #24c599;
+}
+
 button {
   cursor: pointer;
   font-size: 14px;
@@ -40,5 +44,15 @@ button {
     background-color: #24c599;
     border: 0.3px solid #24c599;
     color: #fff;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile {
+    display: inline-block;
   }
 }

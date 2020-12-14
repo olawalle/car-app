@@ -21,6 +21,8 @@ import bg4 from "../../assets/images/bg4.png";
 import { Button, Col, DatePicker, Input, Row, Select } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import ItemsCarousel from "react-items-carousel";
+import Avatar from "antd/lib/avatar/avatar";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
@@ -53,6 +55,18 @@ export default function HomePage() {
       city: "Birmingham",
     },
   ];
+
+  const [firstCarouselCount, setfirstCarouselCount] = useState(3);
+  const [secondCarouselCount, setsecondCarouselCount] = useState(4);
+
+  useEffect(() => {
+    console.log(window);
+    if (window.innerWidth < 767) {
+      setfirstCarouselCount(1.2);
+      setsecondCarouselCount(1.2);
+    }
+  }, []);
+
   return (
     <div className='home-page'>
       <div className='hero container_'>
@@ -60,7 +74,9 @@ export default function HomePage() {
           <img src={logoIcon} alt='' />
 
           <div className='actions'>
-            <span className='login'>Login</span>
+            <Link to='/login'>
+              <span className='login'>Sign in</span>
+            </Link>
             <button className='green-ghost-btn'>Create Account</button>
           </div>
         </nav>
@@ -72,12 +88,14 @@ export default function HomePage() {
           We’ve safely automated the car rental process at the lowest costs, so
           you can enjoy the experience of a high-tech
         </h5>
+
+        <button className='green-ghost-btn mobile'>Create Account</button>
       </div>
 
       <div className='container_ circles'>
         <div className='timing'>
           <div className='inps'>
-            <div className='inp'>
+            <div className='inp wide'>
               <p className='label'>Where</p>
               <img src={location} alt='' />{" "}
               <Select
@@ -86,21 +104,21 @@ export default function HomePage() {
                 bordered={false}
               ></Select>
             </div>
-            <div className='inp'>
+            <div className='inp narrow'>
               <p className='label'>Picker date/time</p>
               <img src={calendar} alt='' />{" "}
               <DatePicker
-                style={{ width: "90%" }}
+                style={{ width: "80%" }}
                 suffixIcon={null}
                 bordered={false}
                 showTime={true}
               />
             </div>
-            <div className='inp'>
+            <div className='inp narrow'>
               <p className='label'>Return date/time</p>
               <img src={calendar} alt='' />{" "}
               <DatePicker
-                style={{ width: "90%" }}
+                style={{ width: "80%" }}
                 suffixIcon={null}
                 bordered={false}
                 showTime={true}
@@ -186,7 +204,7 @@ export default function HomePage() {
         <ItemsCarousel
           requestToChangeActive={setActiveItemIndex}
           activeItemIndex={activeItemIndex}
-          numberOfCards={3}
+          numberOfCards={firstCarouselCount}
           gutter={20}
           leftChevron={
             <div className='arrow' style={{ marginLeft: 40 }}>
@@ -221,7 +239,7 @@ export default function HomePage() {
         <ItemsCarousel
           requestToChangeActive={setActiveItemIndex_}
           activeItemIndex={activeItemIndex_}
-          numberOfCards={4}
+          numberOfCards={secondCarouselCount}
           gutter={20}
           leftChevron={
             <div className='arrow' style={{ marginLeft: 40 }}>
@@ -271,10 +289,25 @@ export default function HomePage() {
           {[1, 2, 3, 4, 5].map((itm) => {
             return (
               <div className='testimonial'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                blanditiis esse laudantium fuga, molestiae earum porro
-                aspernatur. Nisi, mollitia et provident sit vitae accusamus quas
-                voluptas eius voluptatum ipsa magnam?
+                <p className='testimonial-title'>
+                  Help us improve our productivity
+                </p>
+                <p className='testimonial-text'>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Voluptate obcaecati temporibus, vero aliquid, eveniet, rem
+                  amet dolore neque maxime eligendi qui vitae ducimus expedita
+                  soluta. Voluptates asperiores dignissimos debitis animi?
+                </p>
+                <div className='by'>
+                  <Avatar
+                    style={{ width: 40, height: 40 }}
+                    src={`https://randomuser.me/api/portraits/women/4${itm}.jpg`}
+                  />
+                  <div className='details'>
+                    <p className='name'>James moore</p>
+                    <p className='user-details'>lorem ipsum is a boy</p>
+                  </div>
+                </div>
               </div>
             );
           })}
@@ -289,14 +322,7 @@ export default function HomePage() {
             necessitatibus illum, fugiat alias ea, facere ullam ipsam repellat.
           </p>
           <div>
-            <Input
-              style={{
-                width: 400,
-                height: 50,
-                borderRadius: 12,
-                marginRight: 10,
-              }}
-            />{" "}
+            <Input />{" "}
             <Button className='green-btn' style={{ height: 50 }}>
               Submit
             </Button>
@@ -323,36 +349,38 @@ export default function HomePage() {
             </p>
           </Col>
           <Col sm={24} md={12}>
-            <Row>
-              <Col sm={24} md={8}>
-                <p className='links-title'>Company</p>
-                <ul>
-                  <li>My Account</li>
-                  <li>Contact</li>
-                  <li>Company</li>
-                  <li>Login</li>
-                  <li>Register</li>
-                </ul>
-              </Col>
-              <Col sm={24} md={8}>
-                <p className='links-title'>Location</p>
-                <ul>
-                  <li>Paris</li>
-                  <li>Berlin</li>
-                  <li>Barcelona</li>
-                  <li>Milan</li>
-                  <li>London</li>
-                  <li>San Francisco </li>
-                  <li>Los Angeles</li>
-                </ul>
-              </Col>
-              <Col sm={24} md={8}>
-                <p className='links-title'>Quick Links</p>
-                <ul>
-                  <li>Privacy Policy</li>
-                </ul>
-              </Col>
-            </Row>
+            <div>
+              <Row>
+                <Col sm={24} md={8}>
+                  <p className='links-title'>Company</p>
+                  <ul>
+                    <li>My Account</li>
+                    <li>Contact</li>
+                    <li>Company</li>
+                    <li>Login</li>
+                    <li>Register</li>
+                  </ul>
+                </Col>
+                <Col sm={24} md={8}>
+                  <p className='links-title'>Location</p>
+                  <ul>
+                    <li>Paris</li>
+                    <li>Berlin</li>
+                    <li>Barcelona</li>
+                    <li>Milan</li>
+                    <li>London</li>
+                    <li>San Francisco </li>
+                    <li>Los Angeles</li>
+                  </ul>
+                </Col>
+                <Col sm={24} md={8}>
+                  <p className='links-title'>Quick Links</p>
+                  <ul>
+                    <li>Privacy Policy</li>
+                  </ul>
+                </Col>
+              </Row>
+            </div>
           </Col>
         </Row>
       </footer>
