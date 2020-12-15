@@ -10,6 +10,7 @@
     "antd": "^4.9.2",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
+    "react-circular-progressbar": "^2.0.3",
     "react-dom": "^17.0.1",
     "react-floating-label-input": "^4.3.2",
     "react-items-carousel": "^2.8.0",

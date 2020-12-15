@@ -3,9 +3,9 @@ import logo from "../../assets/images/blackLogo.svg";
 import "./Login.scss";
 import FloatingLabelInput from "react-floating-label-input";
 import { Button } from "antd";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-export default function Login() {
+export default withRouter(function Login({ history }) {
   const [loginData, setloginData] = useState({
     email: "",
     password: "",
@@ -38,7 +38,12 @@ export default function Login() {
         />
         <p className='forgot'>Forogt password?</p>
 
-        <Button className='green-btn'>Log in</Button>
+        <Button
+          className='green-btn'
+          onClick={() => history.push("/dashboard")}
+        >
+          Log in
+        </Button>
 
         <p className='idont'>
           I dont have an account yet?{" "}
@@ -50,4 +55,4 @@ export default function Login() {
       <div className='half woman'></div>
     </div>
   );
-}
+});

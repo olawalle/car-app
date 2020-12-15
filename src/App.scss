@@ -1,4 +1,5 @@
 @import "~antd/dist/antd.css";
+@import "react-circular-progressbar/dist/styles.css";
 
 @font-face {
   font-family: helvetica;
@@ -46,9 +47,24 @@ button {
     color: #fff;
   }
 }
+.red-btn {
+  border: 0.3px solid #c52424;
+  border-radius: 12px;
+  height: 45px;
+  padding: 0 20px;
+  color: #c52424;
+  background-color: #c5242415;
+}
 
 .mobile {
   display: none;
+}
+
+.ant-modal-content {
+  border-radius: 20px !important;
+}
+.ant-modal-body {
+  padding-bottom: 32px !important;
 }
 
 @media (max-width: 767px) {

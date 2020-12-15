@@ -1,6 +1,11 @@
 import logo from "./logo.svg";
 import "./App.scss";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  HashRouter,
+  Route,
+  Switch,
+} from "react-router-dom";
 import HomePage from "./views/HomePage/HomePage";
 import Login from "./views/Auth/Login";
 import Signup from "./views/Auth/Signup";
@@ -9,7 +14,7 @@ import Dashboard from "./views/Dashboard/Dashboard";
 function App() {
   return (
     <div className='App'>
-      <Router>
+      <HashRouter>
         <Switch>
           <Route path='/login'>
             <Login />
@@ -20,11 +25,11 @@ function App() {
           <Route path='/dashboard'>
             <Dashboard />
           </Route>
-          <Route path='/'>
+          <Route exact path='/'>
             <HomePage />
           </Route>
         </Switch>
-      </Router>
+      </HashRouter>
     </div>
   );
 }

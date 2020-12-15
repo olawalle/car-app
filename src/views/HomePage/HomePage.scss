@@ -17,10 +17,13 @@
         height: 30px;
       }
       .actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         span {
           color: #fff;
           font-size: 14px;
-          margin-right: 20px;
+          margin-right: 0px;
           cursor: pointer;
           &:hover {
             color: #24c599;

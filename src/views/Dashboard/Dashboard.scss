@@ -3,9 +3,18 @@
   flex-direction: row;
   background-color: #f8f8f8;
   height: 100vh;
-  padding: 30px;
+  padding: 0 60px;
+  width: 100vw;
   .dashbody {
-    background-color: #fff;
     border-radius: 12px;
+    width: 100%;
+    margin-left: -300px;
+    padding-left: 320px;
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    overflow-y: auto;
+    padding-top: 60px;
+    // padding-left: 30px;
   }
 }

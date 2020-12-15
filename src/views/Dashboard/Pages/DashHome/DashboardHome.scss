@@ -1,0 +1,169 @@
+.complete {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  height: auto;
+  padding: 0px 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  height: 100px;
+  .CircularProgressbar {
+    width: 60px !important;
+  }
+}
+.dashhome {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12px;
+  height: auto;
+  min-height: calc(100% - 190px);
+  padding: 20px 30px;
+  .page-heading {
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .form {
+    width: 100%;
+    padding-right: 70px;
+    .field {
+      margin-bottom: 20px;
+      position: relative;
+      height: 50px;
+      .dark-bg {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .half {
+          width: 50%;
+          padding-left: 22px;
+        }
+      }
+    }
+  }
+  .results {
+    width: 100%;
+    padding-bottom: 30px;
+    .res {
+      color: #989898;
+      font-weight: 600;
+      font-size: 13px;
+      margin-top: 40px;
+    }
+    .arrow {
+      width: 30px;
+      height: 30px;
+      background-color: #24c599;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      margin-top: -15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      color: #fff;
+    }
+
+    .slide {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 350px;
+      border-radius: 10px;
+      border: 1px solid #ececec;
+      width: 100%;
+      &:hover {
+        // border-color: #24c599;
+      }
+      .book-btn {
+        border: 1px solid #bbbbbb;
+        border-radius: 30px;
+        padding: 10px 20px;
+        background-color: transparent;
+        color: #24c599;
+        &:hover {
+          background-color: #24c599;
+          color: #fff;
+          border: 1px solid #24c599;
+        }
+      }
+    }
+  }
+}
+
+.booking-modal {
+  .label {
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #b1b1b1;
+  }
+  .info {
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  .green-div {
+    border: 1px solid #24c599;
+    background-color: #24c59a0e;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    padding: 12px 20px;
+    span {
+      margin-left: 15px;
+    }
+  }
+
+  .bordered {
+    border: 1px solid #dcdcdc;
+    background-color: #fafafa9d;
+    border-radius: 12px;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    position: relative;
+    &.recommended ::after {
+      content: "recommended";
+      width: 70px;
+      height: 14px;
+      background-color: #24c599;
+      color: #fff;
+      font-size: 8px;
+      text-align: center;
+      border-radius: 4px;
+      line-height: 14px;
+      position: absolute;
+      top: -7%;
+      right: 24px;
+    }
+    &.plan {
+      justify-content: space-between;
+      height: 90px;
+    }
+    &.active {
+      border: 1px solid #24c599;
+      background-color: #24c59a0e;
+    }
+    .circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid rgb(173, 173, 173);
+    }
+    .car {
+      height: 80%;
+      margin-right: 15px;
+    }
+  }
+}
