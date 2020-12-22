@@ -50,10 +50,8 @@ export default function Payment() {
         footer={null}
         width={600}
       >
-        <div style={{ padding: 20 }} className='modal-wrap'>
-          <h2 style={{ fontSize: 40, fontWeight: "600", marginBottom: -10 }}>
-            Card details
-          </h2>
+        <div className='modal-wrap'>
+          <h2>Card details</h2>
           <p
             style={{
               color: "#a5a5a5",
@@ -66,7 +64,7 @@ export default function Payment() {
           </p>
 
           <Row gutter={20}>
-            <Col sm={24} md={24}>
+            <Col sm={24} xs={24} md={24}>
               <Input
                 style={{
                   width: "100%",
@@ -79,7 +77,7 @@ export default function Payment() {
                 placeholder='Card number'
               />
             </Col>
-            <Col sm={24} md={17}>
+            <Col sm={17} xs={17} md={17}>
               <Input
                 style={{
                   width: "100%",
@@ -92,7 +90,7 @@ export default function Payment() {
                 placeholder='MM/YY'
               />
             </Col>
-            <Col sm={24} md={7}>
+            <Col sm={7} xs={7} md={7}>
               <Input
                 style={{
                   width: "100%",
@@ -105,7 +103,7 @@ export default function Payment() {
                 placeholder='CVC'
               />
             </Col>
-            <Col sm={24} md={24}>
+            <Col sm={24} xs={24} md={24}>
               <Input
                 style={{
                   width: "100%",
@@ -118,7 +116,7 @@ export default function Payment() {
                 placeholder="Card holder's name"
               />
             </Col>
-            <Col sm={24} md={24}>
+            <Col sm={24} xs={24} md={24}>
               <Input
                 style={{
                   width: "100%",

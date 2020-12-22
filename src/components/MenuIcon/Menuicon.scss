@@ -1,0 +1,175 @@
+.menu-icon {
+  display: none;
+
+  @media (max-width: 767px) {
+    display: block;
+  }
+  #nav-icon3 {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    z-index: 150;
+    span {
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: #1a1a1a;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: 0.25s ease-in-out;
+      -moz-transition: 0.25s ease-in-out;
+      -o-transition: 0.25s ease-in-out;
+      transition: 0.25s ease-in-out;
+    }
+  }
+
+  #nav-icon3.white {
+    span {
+      background-color: #fff;
+    }
+  }
+  /* Icon 3 */
+
+  #nav-icon3 span:nth-child(1) {
+    top: 0px;
+    width: 70%;
+  }
+
+  #nav-icon3 span:nth-child(2),
+  #nav-icon3 span:nth-child(3) {
+    top: 9px;
+  }
+
+  #nav-icon3 span:nth-child(4) {
+    top: 18px;
+    width: 70%;
+    left: 30%;
+  }
+
+  #nav-icon3.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+    background: #fff;
+  }
+
+  #nav-icon3.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: #fff;
+  }
+
+  #nav-icon3.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background: #fff;
+  }
+
+  #nav-icon3.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+    background: #fff;
+  }
+
+  .items {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    z-index: 15;
+
+    .logo-wrap {
+      margin: 40px;
+      padding-bottom: 30px;
+      //   border-bottom: 1px solid #eee;
+      margin-top: 120px;
+      img {
+        height: 30px;
+      }
+      .welcome {
+        color: #fff;
+        margin-bottom: -8px;
+      }
+      .name {
+        color: #fff;
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 0px;
+      }
+    }
+
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+        margin-bottom: 30px;
+        position: relative;
+        .link {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          color: #fff;
+          cursor: pointer;
+          padding-left: 40px;
+          border-left: 3px solid #000;
+          font-size: 16px;
+          a {
+            color: #fff;
+          }
+          span {
+            margin-right: 15px;
+          }
+          svg {
+            fill: #fff;
+            width: 18px;
+          }
+          &.active {
+            border-left: 3px solid #24c599;
+            color: #24c599;
+            svg {
+              fill: #24c599;
+            }
+          }
+        }
+        &.logout {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          color: #fff;
+          cursor: pointer;
+          padding-left: 40px;
+          border-left: 3px solid #000;
+          position: absolute;
+          bottom: 30px;
+          cursor: pointer;
+          img {
+            width: 20px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

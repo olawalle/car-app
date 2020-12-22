@@ -3,10 +3,6 @@ import "./HomePage.scss";
 
 import logoIcon from "../../assets/images/logoWhite.svg";
 import logoBlack from "../../assets/images/logoBlack.svg";
-import circles from "../../assets/images/circles.svg";
-import calendar from "../../assets/images/calendar.svg";
-import location from "../../assets/images/location.svg";
-import search from "../../assets/images/search.svg";
 import woman from "../../assets/images/woman4.png";
 import fuelCar from "../../assets/images/fuel-car.png";
 import payment from "../../assets/images/payment.png";
@@ -23,6 +19,8 @@ import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import ItemsCarousel from "react-items-carousel";
 import Avatar from "antd/lib/avatar/avatar";
 import { Link } from "react-router-dom";
+import Menuicon from "../../components/MenuIcon/Menuicon";
+import SearchForm from "../../components/SearchForm/SearchForm";
 
 export default function HomePage() {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
@@ -73,6 +71,7 @@ export default function HomePage() {
         <nav>
           <img src={logoIcon} alt='' />
 
+          <Menuicon white />
           <div className='actions'>
             <Link to='/login'>
               <span className='login'>Sign in</span>
@@ -93,40 +92,7 @@ export default function HomePage() {
       </div>
 
       <div className='container_ circles'>
-        <div className='timing'>
-          <div className='inps'>
-            <div className='inp wide'>
-              <p className='label'>Where</p>
-              <img src={location} alt='' />{" "}
-              <Select
-                placeholder='Select your location'
-                style={{ width: "90%" }}
-                bordered={false}
-              ></Select>
-            </div>
-            <div className='inp narrow'>
-              <p className='label'>Picker date/time</p>
-              <img src={calendar} alt='' />{" "}
-              <DatePicker
-                style={{ width: "80%" }}
-                suffixIcon={null}
-                bordered={false}
-                showTime={true}
-              />
-            </div>
-            <div className='inp narrow'>
-              <p className='label'>Return date/time</p>
-              <img src={calendar} alt='' />{" "}
-              <DatePicker
-                style={{ width: "80%" }}
-                suffixIcon={null}
-                bordered={false}
-                showTime={true}
-              />
-            </div>
-          </div>
-          <img src={search} alt='' className='search' />
-        </div>
+        <SearchForm />
         {/* <img src={circles} alt='' className={"circle"} /> */}
       </div>
 
@@ -351,7 +317,7 @@ export default function HomePage() {
           <Col sm={24} md={12}>
             <div>
               <Row>
-                <Col sm={24} md={8}>
+                <Col sm={24} xs={24} md={8}>
                   <p className='links-title'>Company</p>
                   <ul>
                     <li>My Account</li>
@@ -361,7 +327,7 @@ export default function HomePage() {
                     <li>Register</li>
                   </ul>
                 </Col>
-                <Col sm={24} md={8}>
+                <Col sm={24} xs={24} md={8}>
                   <p className='links-title'>Location</p>
                   <ul>
                     <li>Paris</li>
@@ -373,7 +339,7 @@ export default function HomePage() {
                     <li>Los Angeles</li>
                   </ul>
                 </Col>
-                <Col sm={24} md={8}>
+                <Col sm={24} xs={24} md={8}>
                   <p className='links-title'>Quick Links</p>
                   <ul>
                     <li>Privacy Policy</li>

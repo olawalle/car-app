@@ -1,4 +1,4 @@
-import { Tabs } from "antd";
+import { Col, Row, Tabs } from "antd";
 import React, { useState } from "react";
 import "./Trips.scss";
 
@@ -133,6 +133,28 @@ export default function Trips() {
       <Tabs defaultActiveKey='1'>
         <TabPane tab='Planned Trips' key='1'>
           <Table columns={currentColumns} dataSource={data} />
+          <div className='mobile-data'>
+            {data.map((row, i) => (
+              <Row key={`row${i}`} className='line'>
+                <Col span={16}>
+                  <p className='label'>DATE</p>
+                  <p className='val'>09/12/20 - 12/12/20</p>
+                </Col>
+                <Col span={8}>
+                  <p className='label'>DAYS</p>
+                  <p className='val'>3</p>
+                </Col>
+                <Col span={16}>
+                  <p className='label'>CAR</p>
+                  <p className='val'>Toyota Camry</p>
+                </Col>
+                <Col span={8}>
+                  <p className='label'>EXTRA FEE</p>
+                  <p className='val'>$200</p>
+                </Col>
+              </Row>
+            ))}
+          </div>
         </TabPane>
         <TabPane tab='Past Trips' key='2'>
           <Table

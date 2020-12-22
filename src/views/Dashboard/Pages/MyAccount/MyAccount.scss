@@ -71,4 +71,21 @@
       }
     }
   }
+
+  @media (max-width: 768px), (min-width: 768px) and (max-width: 1024px) {
+    padding: 25px;
+    section {
+      &.cut {
+        padding-right: 0px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        button {
+          width: 100%;
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
 }

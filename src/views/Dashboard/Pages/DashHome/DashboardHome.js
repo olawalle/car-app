@@ -1,5 +1,5 @@
 import { Button, Col, Input, Row, Select } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./DashboardHome.scss";
 import { DatePicker } from "antd";
 import ItemsCarousel from "react-items-carousel";
@@ -17,6 +17,14 @@ export default function DashboardHome() {
   const [open, setOpen] = useState(false);
   const percentage = 66;
   const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const [carouselCount, setCarouselCount] = useState(2);
+
+  useEffect(() => {
+    if (window.innerWidth < 767) {
+      setCarouselCount(1);
+    }
+  }, []);
+
   return (
     <>
       <div className='complete'>
@@ -161,7 +169,7 @@ export default function DashboardHome() {
             <ItemsCarousel
               requestToChangeActive={setActiveItemIndex}
               activeItemIndex={activeItemIndex}
-              numberOfCards={2}
+              numberOfCards={carouselCount}
               gutter={20}
               leftChevron={
                 <div className='arrow' style={{ marginLeft: 40 }}>

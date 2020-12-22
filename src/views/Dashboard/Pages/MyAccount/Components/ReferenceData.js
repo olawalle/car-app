@@ -16,23 +16,23 @@ export default function ReferenceData() {
         <section className='cut'>
           <p className='title'>Reference Information</p>
           <Row gutter={20}>
-            <Col sm={24} md={12}>
+            <Col sm={24} xs={24} md={12}>
               <p className='label'>Firstname</p>
               <Input />
             </Col>
-            <Col sm={24} md={12}>
+            <Col sm={24} xs={24} md={12}>
               <p className='label'>Lastname</p>
               <Input />
             </Col>
-            <Col sm={24} md={12}>
+            <Col sm={24} xs={24} md={12}>
               <p className='label'>Phone No.</p>
               <Input />
             </Col>
-            <Col sm={24} md={12}>
+            <Col sm={24} xs={24} md={12}>
               <p className='label'>Relationship</p>
               <Input />
             </Col>
-            <Col sm={24} md={24}>
+            <Col sm={24} xs={24} md={24}>
               <p className='label'>Permanent address</p>
               <Input />
             </Col>

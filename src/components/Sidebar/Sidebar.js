@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Sidebar.scss";
 
 import logo from "../../assets/images/blackLogo.svg";
-import { withRouter } from "react-router-dom";
+import { useRouteMatch, withRouter } from "react-router-dom";
+import logout from "../../assets/images/logout.svg";
 
-export default withRouter(function Sidebar({ history }) {
+export const LinkContents = withRouter((props) => {
   const [currentLink, setCurrentLink] = useState(0);
   const links = [
     {
@@ -29,12 +30,38 @@ export default withRouter(function Sidebar({ history }) {
     },
   ];
 
-  return (
-    <div className='sidebar'>
-      <div className='logo-wrap'>
-        <img src={logo} alt='' />
-      </div>
+  useEffect(() => {
+    console.log(window.location.hash);
+    switch (window.location.hash) {
+      case "#/dashboard/":
+        setCurrentLink(0);
+        break;
+      case "#/dashboard/trips":
+        setCurrentLink(1);
+        break;
+      case "#/dashboard/payment":
+        setCurrentLink(2);
+        break;
+      case "#/dashboard/account":
+        setCurrentLink(3);
+        break;
 
+      default:
+        break;
+    }
+  }, [window.location.hash]);
+
+  const logoutHandler = () => {
+    props.history.push("/");
+  };
+
+  const goToLink = (to) => {
+    props.history.push(`/dashboard/${to}`);
+    props.closeLinks();
+  };
+
+  return (
+    <div className={`contents ${props.open && "show"}`}>
       <div className='logo-wrap'>
         <p className='welcome'>Welcome</p>
         <p className='name'>David O.</p>
@@ -43,9 +70,10 @@ export default withRouter(function Sidebar({ history }) {
       <ul>
         {links.map((link, i) => (
           <li
+            key={`link${i}`}
             onClick={() => {
-              setCurrentLink(i);
-              history.push(`/dashboard/${link.to}`);
+              // setCurrentLink(i);
+              goToLink(link.to);
             }}
           >
             <div className={`link ${i === currentLink ? "active" : ""}`}>
@@ -54,7 +82,38 @@ export default withRouter(function Sidebar({ history }) {
             </div>
           </li>
         ))}
+        <li className='logout' onClick={logoutHandler}>
+          <img src={logout} alt='' /> Logout
+        </li>
       </ul>
+    </div>
+  );
+});
+
+export default withRouter(function Sidebar() {
+  const [open, setOpen] = useState(false);
+
+  const closeLinks = () => {
+    console.log("closing");
+  };
+
+  return (
+    <div className='sidebar'>
+      <div className='logo-wrap'>
+        <img src={logo} alt='' />
+      </div>
+
+      <div
+        id='nav-icon3'
+        className={open && "open"}
+        onClick={() => setOpen(!open)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <LinkContents open={open} closeLinks={closeLinks} />
     </div>
   );
 });

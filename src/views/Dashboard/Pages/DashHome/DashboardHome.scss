@@ -167,3 +167,19 @@
     }
   }
 }
+
+@media (max-width: 768px), (min-width: 768px) and (max-width: 1024px) {
+  .complete {
+    padding: 10px 20px;
+    height: auto;
+    .CircularProgressbar {
+      width: 170px !important;
+    }
+  }
+
+  .dashhome {
+    .form {
+      padding-right: 0;
+    }
+  }
+}

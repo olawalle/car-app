@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import logo from "../../assets/images/blackLogo.svg";
+import logo_ from "../../assets/images/logoIcon.svg";
 import "./Login.scss";
 import FloatingLabelInput from "react-floating-label-input";
 import { Button, Col, Row } from "antd";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Modal from "antd/lib/modal/Modal";
 import PinInput from "react-pin-input";
 
-export default function Signup() {
+export default withRouter(function Signup({ history }) {
   const [regData, setregData] = useState({
     email: "",
     password: "",
@@ -20,13 +21,16 @@ export default function Signup() {
   return (
     <div className='login'>
       <div className='half fields'>
-        <img src={logo} alt='' />
+        <div onClick={() => history.push("/")}>
+          <img src={logo} alt='' className='web-logo' />
+          <img src={logo_} alt='' className='mobile-logo' />
+        </div>
 
         <h1>Create an account</h1>
         <p>We just need a bit of information about you</p>
 
         <Row gutter={20}>
-          <Col sm={24} md={12}>
+          <Col sm={24} xs={24} md={12}>
             <FloatingLabelInput
               id='example-3'
               label='First name'
@@ -36,7 +40,7 @@ export default function Signup() {
               value={regData.firstname}
             />
           </Col>
-          <Col sm={24} md={12}>
+          <Col sm={24} xs={24} md={12}>
             <FloatingLabelInput
               id='example-3'
               label='Last name'
@@ -47,7 +51,7 @@ export default function Signup() {
             />
           </Col>
 
-          <Col sm={24} md={6}>
+          <Col sm={24} xs={24} md={6}>
             <FloatingLabelInput
               id='example-3'
               label=''
@@ -56,7 +60,7 @@ export default function Signup() {
             />
           </Col>
 
-          <Col sm={24} md={18}>
+          <Col sm={24} xs={24} md={18}>
             <FloatingLabelInput
               id='example-3'
               label='Phone no'
@@ -67,7 +71,7 @@ export default function Signup() {
             />
           </Col>
 
-          <Col sm={24} md={24}>
+          <Col sm={24} xs={24} md={24}>
             <FloatingLabelInput
               id='example-3'
               label='Email address'
@@ -78,7 +82,7 @@ export default function Signup() {
             />
           </Col>
 
-          <Col sm={24} md={24}>
+          <Col sm={24} xs={24} md={24}>
             <FloatingLabelInput
               id='example-3'
               label='Password'
@@ -103,12 +107,12 @@ export default function Signup() {
         >
           <div
             style={{
-              padding: 100,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
             }}
+            className='modal-form'
           >
             <p style={{ textAlign: "center" }}>
               Enter the 4 digit code sent to your phone number to verify your
@@ -157,4 +161,4 @@ export default function Signup() {
       <div className='half woman_'></div>
     </div>
   );
-}
+});

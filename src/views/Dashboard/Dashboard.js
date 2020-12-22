@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import "./Dashboard.scss";
 import {
@@ -13,12 +13,20 @@ import Trips from "./Pages/Trips/Trips";
 import Payment from "./Pages/Payment/Payment";
 import MyAccount from "./Pages/MyAccount/MyAccount";
 
+import logo from "../../assets/images/logoIcon.svg";
+import Menuicon from "../../components/MenuIcon/Menuicon";
+
 export default function Dashboard() {
   let match = useRouteMatch();
+
   return (
     <div className='dashboard'>
       <Sidebar />
       <div className='dashbody'>
+        <div className='mobile-nav'>
+          <img src={logo} alt='' />
+          <Menuicon />
+        </div>
         <HashRouter>
           <Switch>
             <Route exact path={`${match.path}/trips`}>

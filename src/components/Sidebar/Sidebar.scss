@@ -29,6 +29,7 @@
     li {
       list-style: none;
       margin-bottom: 30px;
+      position: relative;
       .link {
         display: flex;
         flex-direction: row;
@@ -52,6 +53,26 @@
           }
         }
       }
+      &.logout {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #68686886;
+        cursor: pointer;
+        padding-left: 40px;
+        border-left: 3px solid #fff;
+        cursor: pointer;
+        position: absolute;
+        bottom: 30px;
+        img {
+          width: 20px;
+          margin-right: 10px;
+        }
+      }
     }
+  }
+
+  @media (max-width: 768px), (min-width: 768px) and (max-width: 1024px) {
+    display: none;
   }
 }

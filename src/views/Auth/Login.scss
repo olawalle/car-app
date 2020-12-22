@@ -4,6 +4,12 @@
   padding: 40px;
   .half {
     width: 50%;
+    .web-logo {
+      display: block;
+    }
+    .mobile-logo {
+      display: none;
+    }
   }
   .fields {
     padding: 0 120px;
@@ -73,5 +79,25 @@
     background-repeat: no-repeat;
     height: 90vh;
     border-radius: 20px;
+  }
+
+  @media (max-width: 768px), (min-width: 768px) and (max-width: 1024px) {
+    flex-direction: column;
+    .half {
+      width: 100%;
+      .web-logo {
+        display: none;
+      }
+      .mobile-logo {
+        display: block;
+      }
+    }
+    .fields {
+      padding: 0;
+    }
+    .woman,
+    .woman_ {
+      display: none;
+    }
   }
 }

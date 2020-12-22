@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../assets/images/blackLogo.svg";
+import logo_ from "../../assets/images/logoIcon.svg";
 import "./Login.scss";
 import FloatingLabelInput from "react-floating-label-input";
 import { Button } from "antd";
@@ -13,7 +14,10 @@ export default withRouter(function Login({ history }) {
   return (
     <div className='login'>
       <div className='half fields'>
-        <img src={logo} alt='' />
+        <div onClick={() => history.push("/")}>
+          <img src={logo} alt='' className='web-logo' />
+          <img src={logo_} alt='' className='mobile-logo' />
+        </div>
 
         <h1>Login</h1>
         <p>We just need a bit of information about you</p>
