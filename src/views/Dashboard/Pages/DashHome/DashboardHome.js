@@ -10,6 +10,7 @@ import car2 from "../../../../assets/images/car2.png";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import BookingModal from "./BookingModal";
+import { Link } from "react-router-dom";
 
 const { RangePicker, TimePicker } = DatePicker;
 
@@ -27,35 +28,40 @@ export default function DashboardHome() {
 
   return (
     <>
-      <div className='complete'>
-        <CircularProgressbar
-          strokeWidth={12}
-          value={percentage}
-          text={`${percentage}%`}
-          styles={buildStyles({
-            pathColor: "#24c599",
-            textColor: "#b9b9b9",
-          })}
-        />
+      <Link to='/dashboard/account'>
+        <a>
+          <div className='complete'>
+            <CircularProgressbar
+              strokeWidth={12}
+              value={percentage}
+              text={`${percentage}%`}
+              styles={buildStyles({
+                pathColor: "#24c599",
+                textColor: "#b9b9b9",
+              })}
+            />
 
-        <div style={{ paddingLeft: 15 }}>
-          <p
-            style={{
-              color: "#24c599",
-              fontSize: 18,
-              fontWeight: 600,
-              marginBottom: 0,
-              marginTop: 10,
-            }}
-          >
-            Complete your profile
-          </p>
-          <p style={{ color: "#a4a4a4" }}>
-            Please scan all the required documents in the app. make sure the
-            details are legible
-          </p>
-        </div>
-      </div>
+            <div style={{ paddingLeft: 15 }}>
+              <p
+                style={{
+                  color: "#24c599",
+                  fontSize: 18,
+                  fontWeight: 600,
+                  marginBottom: 0,
+                  marginTop: 10,
+                }}
+              >
+                Complete your profile
+              </p>
+              <p style={{ color: "#a4a4a4" }}>
+                Please scan all the required documents in the app. make sure the
+                details are legible
+              </p>
+            </div>
+          </div>
+        </a>
+      </Link>
+
       <div className='dashhome'>
         <Row className='roww'>
           <Col sm={24} md={11} className='form'>

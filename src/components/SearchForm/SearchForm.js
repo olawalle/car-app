@@ -33,35 +33,26 @@ export default function SearchForm() {
         <div className='inps'>
           <div className='inp wide'>
             <p className='label'>Where</p>
-            <img src={location} alt='' />{" "}
-            <Select
-              placeholder='Select your location'
-              style={{ width: "90%" }}
-              bordered={false}
-            ></Select>
+            <div className='itm'>
+              <img src={location} alt='' /> Select Location
+            </div>
           </div>
           <div className='inp narrow'>
             <p className='label'>Picker date/time</p>
-            <img src={calendar} alt='' />{" "}
-            <DatePicker
-              style={{ width: "80%" }}
-              suffixIcon={null}
-              bordered={false}
-              showTime={true}
-            />
+            <div className='itm'>
+              <img src={calendar} alt='' /> Select date
+            </div>
           </div>
           <div className='inp narrow'>
             <p className='label'>Return date/time</p>
-            <img src={calendar} alt='' />{" "}
-            <DatePicker
-              style={{ width: "80%" }}
-              suffixIcon={null}
-              bordered={false}
-              showTime={true}
-            />
+            <div className='itm'>
+              <img src={calendar} alt='' /> Select date
+            </div>
           </div>
         </div>
-        <img src={search} alt='' className='search' />
+        <div className='search'>
+          <img src={search} alt='' className='' />
+        </div>
       </div>
     );
   };

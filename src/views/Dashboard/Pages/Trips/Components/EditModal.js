@@ -65,10 +65,10 @@ export default function EditModal({ open, setshowEdit }) {
             <div className='bordered'>
               <img src={car} alt='' className='car' />
               <div>
-                <p style={{ marginBottom: 0, fontWeight: "600" }}>
+                <p style={{ marginBottom: 0, fontSize: 15 }}>
                   Full coverage plan
                 </p>
-                <p style={{ color: "#000000b0", fontSize: 12 }}>Price: $50</p>
+                <p style={{ color: "#000000b0", fontSize: 14 }}>Price: $50</p>
               </div>
             </div>
 
@@ -82,10 +82,10 @@ export default function EditModal({ open, setshowEdit }) {
                 }`}
               >
                 <div>
-                  <p style={{ marginBottom: 3, fontWeight: "600" }}>
+                  <p style={{ marginBottom: 3, fontSize: 16 }}>
                     Full coverage plan
                   </p>
-                  <p style={{ color: "#000000b0", fontSize: 12 }}>Price: $50</p>
+                  <p style={{ color: "#000000b0", fontSize: 14 }}>Price: $50</p>
                 </div>
                 {plan === 1 ? (
                   <CheckCircleFilled

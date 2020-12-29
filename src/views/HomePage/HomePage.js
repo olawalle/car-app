@@ -21,6 +21,7 @@ import Avatar from "antd/lib/avatar/avatar";
 import { Link } from "react-router-dom";
 import Menuicon from "../../components/MenuIcon/Menuicon";
 import SearchForm from "../../components/SearchForm/SearchForm";
+import circles from "../../assets/images/circles.svg";
 
 export default function HomePage() {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
@@ -70,8 +71,6 @@ export default function HomePage() {
       <div className='hero container_'>
         <nav>
           <img src={logoIcon} alt='' />
-
-          <Menuicon white />
           <div className='actions'>
             <Link to='/login'>
               <span className='login'>Sign in</span>
@@ -93,12 +92,13 @@ export default function HomePage() {
 
       <div className='container_ circles'>
         <SearchForm />
-        {/* <img src={circles} alt='' className={"circle"} /> */}
+        <img src={circles} alt='' className={"circle"} />
       </div>
 
       <div className='container_ features'>
-        <p className='features-heading'>Awsome Features</p>
-        <p className='features-subheading'>Using technology to keep you safe</p>
+        <p className='features-subheading'>
+          Using technology to keep you moving
+        </p>
         <Row gutter={30}>
           <Col md={8} sm={24}>
             <div className='feature-card'>
@@ -143,8 +143,10 @@ export default function HomePage() {
         <Row>
           <Col sm={24} md={12}>
             <div className='texts'>
-              <p className='features-heading'>Awsome Features</p>
-              <p className='features-subheading'>
+              <p className='features-heading' style={{ marginBottom: -50 }}>
+                Awsome Features
+              </p>
+              <p className='features-subheading' style={{ marginBottom: 20 }}>
                 Using technology to keep you safe
               </p>
               <p className='story'>
@@ -189,10 +191,10 @@ export default function HomePage() {
             <div>
               <div className='slide'>
                 <img src={car2} alt='' style={{ width: "50%" }} />
-                <p style={{ fontSize: 16, fontWeight: "600", marginBottom: 0 }}>
+                <p style={{ fontSize: 18, fontWeight: "600", marginBottom: 0 }}>
                   Bmw 2021
                 </p>
-                <p>70,000 miles</p>
+                <p style={{ fontSize: 18 }}>70,000 miles</p>
               </div>
             </div>
           ))}
@@ -200,23 +202,14 @@ export default function HomePage() {
       </div>
 
       <div className='container_ slides-wrap'>
-        <p className='features-heading'>Awsome Features</p>
         <p className='features-subheading'>Search by location</p>
         <ItemsCarousel
           requestToChangeActive={setActiveItemIndex_}
           activeItemIndex={activeItemIndex_}
           numberOfCards={secondCarouselCount}
           gutter={20}
-          leftChevron={
-            <div className='arrow' style={{ marginLeft: 40 }}>
-              <LeftOutlined />
-            </div>
-          }
-          rightChevron={
-            <div className='arrow' style={{ marginRight: 40 }}>
-              <RightOutlined />
-            </div>
-          }
+          leftChevron={null}
+          rightChevron={null}
           outsideChevron
           chevronWidth={chevronWidth}
         >
@@ -237,6 +230,8 @@ export default function HomePage() {
                     position: "absolute",
                     bottom: 0,
                     left: 20,
+                    fontSize: 18,
+                    fontWeight: "600",
                   }}
                 >
                   {bg.city}
@@ -247,36 +242,55 @@ export default function HomePage() {
         </ItemsCarousel>
       </div>
 
-      <div className='container_ ' style={{ paddingRight: 0, marginTop: 100 }}>
-        <p className='features-heading'>Testimonials</p>
+      <div className='container_ ' style={{ marginTop: 100 }}>
+        <p className='features-heading' style={{ marginBottom: -60 }}>
+          Testimonials
+        </p>
         <p className='features-subheading'>What Our Customers Are Saying</p>
 
-        <div className='testimonials'>
-          {[1, 2, 3, 4, 5].map((itm) => {
-            return (
-              <div className='testimonial'>
-                <p className='testimonial-title'>
-                  Help us improve our productivity
-                </p>
-                <p className='testimonial-text'>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptate obcaecati temporibus, vero aliquid, eveniet, rem
-                  amet dolore neque maxime eligendi qui vitae ducimus expedita
-                  soluta. Voluptates asperiores dignissimos debitis animi?
-                </p>
-                <div className='by'>
-                  <Avatar
-                    style={{ width: 40, height: 40 }}
-                    src={`https://randomuser.me/api/portraits/women/4${itm}.jpg`}
-                  />
-                  <div className='details'>
-                    <p className='name'>James moore</p>
-                    <p className='user-details'>lorem ipsum is a boy</p>
+        <div className='testimonials slides-wrap'>
+          <ItemsCarousel
+            requestToChangeActive={setActiveItemIndex}
+            activeItemIndex={activeItemIndex}
+            numberOfCards={firstCarouselCount}
+            gutter={20}
+            leftChevron={
+              <div className='arrow' style={{ marginLeft: 40 }}>
+                <LeftOutlined />
+              </div>
+            }
+            rightChevron={
+              <div className='arrow' style={{ marginRight: 40 }}>
+                <RightOutlined />
+              </div>
+            }
+            outsideChevron
+            chevronWidth={chevronWidth}
+          >
+            {[1, 2, 3, 4, 5].map((itm) => {
+              return (
+                <div className='testimonial'>
+                  <p className='testimonial-title'>
+                    Help us improve our productivity
+                  </p>
+                  <p className='testimonial-text'>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptate obcaecati temporibus, vero aliquid, eveniet, rem
+                  </p>
+                  <div className='by'>
+                    <Avatar
+                      style={{ width: 40, height: 40 }}
+                      src={`https://randomuser.me/api/portraits/women/4${itm}.jpg`}
+                    />
+                    <div className='details'>
+                      <p className='name'>James moore</p>
+                      <p className='user-details'>lorem ipsum is a boy</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </ItemsCarousel>
         </div>
       </div>
 
@@ -297,25 +311,16 @@ export default function HomePage() {
       </div>
       <footer className='container_'>
         <Row>
-          <Col sm={24} md={12}>
+          <Col sm={24} md={12} xs={24}>
             <img src={logoBlack} alt='' className='footer-logo' />
             <p className='footer-desc'>
               Etiam convallis elementum sapien, a aliquam turpis aliquam vitae.
               Praesent sollicitudin felis vel mi facilisis posuere. Nulla
               ultrices facilisis justo, non varius nisl semper vel. Interdum et
-              malesuada fames ac ante ipsum primis in faucibus. Phasellus at
-              ante mattis, condimentum velit et, dignissim nunc. Integer quis
-              tincidunt purus. Duis dignissim mauris vel elit commodo, eu
-              hendrerit leo ultrices. Nulla vehicula vestibulum purus at rutrum.
-              Pellentesque habitant morbi tristique senectus et netus et
-              malesuada fames ac turpis egestas. Curabitur dignissim massa nec
-              libero scelerisque rutrum. Curabitur ac purus id elit hendrerit
-              lacinia. Nullam sit amet sem efficitur, porta diam in, convallis
-              tortor.
             </p>
           </Col>
-          <Col sm={24} md={12}>
-            <div>
+          <Col sm={24} md={12} xs={24}>
+            <div style={{ width: "100%" }}>
               <Row>
                 <Col sm={24} xs={24} md={8}>
                   <p className='links-title'>Company</p>

@@ -1,8 +1,25 @@
 .my-account {
   width: 100%;
-  background-color: #fff;
   min-height: 100%;
-  padding: 30px 50px;
+  padding: 0px 50px;
+  .complete {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    height: auto;
+    padding: 20px 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    margin-bottom: 30px;
+    .CircularProgressbar {
+      width: 180px !important;
+    }
+  }
+  .data-wrap {
+    background-color: #fff;
+    padding: 30px 50px;
+  }
   .title {
     font-size: 18px;
     font-weight: 600;
@@ -34,10 +51,10 @@
       color: #989898;
       margin-bottom: 5px;
       margin-top: 20px;
-      font-size: 14px;
+      font-size: 16px;
     }
     .info {
-      font-size: 14px;
+      font-size: 16px;
     }
     .ghost {
       height: 30px;
