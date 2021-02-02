@@ -3,7 +3,6 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import "./Dashboard.scss";
 import {
   BrowserRouter as Router,
-  HashRouter,
   Route,
   Switch,
   useRouteMatch,
@@ -27,7 +26,7 @@ export default function Dashboard() {
           <img src={logo} alt='' />
           <Menuicon />
         </div>
-        <HashRouter>
+        <Router>
           <Switch>
             <Route exact path={`${match.path}/trips`}>
               <Trips />
@@ -42,7 +41,7 @@ export default function Dashboard() {
               <DashboardHome />
             </Route>
           </Switch>
-        </HashRouter>
+        </Router>
       </div>
     </div>
   );

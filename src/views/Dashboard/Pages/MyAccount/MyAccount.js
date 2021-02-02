@@ -7,15 +7,19 @@ import PersonalInfo from "./Components/PersonalInfo";
 import ReferenceData from "./Components/ReferenceData";
 import ScanID from "./Components/ScanID";
 import "./MyAccount.scss";
+import { UseUserContext } from "../../../../contexts/User";
 
 export default function MyAccount() {
   const [percentage, setpercentage] = useState(50);
+  const { user } = UseUserContext().userData;
+  const {profile_completion_rate} = user;
+
   return (
-    <div className='my-account'>
-      <div className='complete'>
+    <div className="my-account">
+      <div className="complete">
         <CircularProgressbar
           strokeWidth={12}
-          value={percentage}
+          value={profile_completion_rate}
           text={`${percentage}%`}
           styles={buildStyles({
             pathColor: "#24c599",
@@ -74,7 +78,7 @@ export default function MyAccount() {
         </div>
       </div>
 
-      <div className='data-wrap'>
+      <div className="data-wrap">
         <PersonalInfo />
 
         <ScanID />

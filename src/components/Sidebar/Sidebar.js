@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Sidebar.scss";
-
 import logo from "../../assets/images/blackLogo.svg";
 import { useRouteMatch, withRouter } from "react-router-dom";
 import logout from "../../assets/images/logout.svg";
+import {UseUserContext} from '../../contexts/User';
 
 export const LinkContents = withRouter((props) => {
   const [currentLink, setCurrentLink] = useState(0);
@@ -51,6 +51,8 @@ export const LinkContents = withRouter((props) => {
     }
   }, [window.location.hash]);
 
+  const {user} = UseUserContext().userData;
+
   const logoutHandler = () => {
     props.history.push("/");
   };
@@ -62,9 +64,11 @@ export const LinkContents = withRouter((props) => {
 
   return (
     <div className={`contents ${props.open && "show"}`}>
-      <div className='logo-wrap'>
-        <p className='welcome'>Welcome</p>
-        <p className='name'>David O.</p>
+      <div className="logo-wrap">
+        <p className="welcome">Welcome</p>
+        <p className="name">{`${user.first_name} ${user.last_name.charAt(
+          0
+        )}.`}</p>
       </div>
 
       <ul>
@@ -82,8 +86,8 @@ export const LinkContents = withRouter((props) => {
             </div>
           </li>
         ))}
-        <li className='logout' onClick={logoutHandler}>
-          <img src={logout} alt='' /> Logout
+        <li className="logout" onClick={logoutHandler}>
+          <img src={logout} alt="" /> Logout
         </li>
       </ul>
     </div>

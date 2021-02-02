@@ -2,9 +2,12 @@ import { Button, Input } from "antd";
 import React, { useState } from "react";
 
 import edit from "../../../../../assets/images/edit.svg";
+import { UseUserContext } from "../../../../../contexts/User";
 
 export default function PersonalInfo() {
   const [isEditting, setIsEditting] = useState(false);
+    const { user } = UseUserContext().userData;
+
   return (
     <>
       <p className='title'>
@@ -18,7 +21,7 @@ export default function PersonalInfo() {
       </p>
       <div className='user-photo'>
         <div className='photo'></div>
-        <span className='name'>David O.C</span>
+        <span className='name'>{`${user.first_name} ${user.last_name.charAt(0)}`}</span>
       </div>
 
       {!isEditting ? (
